@@ -5,23 +5,29 @@ public class Main {
 	public static void main(String[] args) {
 		Product product1 = new Product();
 		
-		product1.id=1;
-		product1.name="Lenovo V14";
-		product1.unitsPrice=15000;
-		product1.detail="16GB RAM";
+		product1.setId(2);
+		product1.setName("Lenovo V15");
+		product1.setUnitsPrice(16000);
+		product1.setDiscount(10);
+		product1.setDetail("16 GB RAM");
 		
-		Product product2 = new Product(1,"Lenovo V15",16000,"32GB RAM");
 		
-		Product[] products ={product1,product2};
+		System.out.println(product1.getUnitsPriceAfterDiscount());
+		 
+		Product product2 = new Product(3,"Lenovo",8000,"8 GB RAM",5);
 		
-		for (Product product : products) {
-			System.out.println(product.name);
-		}
+		System.out.println(product2.getUnitsPriceAfterDiscount());
 		
-		System.out.println(product1.name);
+		Category category1 = new Category();
+		category1.setId(2);
+		category1.setName("Ýçecek");
+		Category category2 = new Category();
+		category2.setId(3);
+		category2.setName("Yiyecek");
 		
-		ProductManager productManager = new ProductManager();
-		productManager.addToCart(product1);
+		System.out.println(category1.getName());
+		System.out.println(category2.getName());
+		
 	}
 
 }
